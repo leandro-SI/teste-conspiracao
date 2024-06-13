@@ -18,16 +18,23 @@ namespace Conspiracao.API.Controllers
             _pedidoService = pedidoService;
         }
 
+        /// <summary>
+        /// Gerar um novo pedido
+        /// </summary>
+        /// <param name="pedidoDto">Dados do Pedido</param>
+        /// <returns>Objeto criado</returns>
+        /// <response code="400">Objeto inválido</response>
+        /// <response code="200">Sucesso</response>
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult IncluirPedido([FromBody] PedidoDTO pedidoDto)
         {
 
             try
             {
                 if (!ModelState.IsValid)
-                {
                     return BadRequest(ModelState);
-                }
 
                 if (pedidoDto == null)
                     return BadRequest("Invalid Data");
@@ -43,9 +50,8 @@ namespace Conspiracao.API.Controllers
             }
             catch (Exception error)
             {
-                throw new Exception(error.Message); ;
+                throw new Exception(error.Message);
             }
-
 
         }
     }
