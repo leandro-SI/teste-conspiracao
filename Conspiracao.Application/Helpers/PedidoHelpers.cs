@@ -12,7 +12,7 @@ namespace Conspiracao.Application.Helpers
         {
             Random random = new Random();
 
-            return random.Next(0, 100);
+            return random.Next(0, 99999);
         }
     }
 }

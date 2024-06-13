@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Conspiracao.Application.Dtos;
+using Conspiracao.Application.Dtos.Responses;
 using Conspiracao.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,8 @@ namespace Conspiracao.Application.Mappings
         public DomainToDTOMappingProfile()
         {
             CreateMap<Pedido, PedidoDTO>().ReverseMap();
+            CreateMap<ItemPedidoDTO, ItemResponse>().ReverseMap();
+            CreateMap<ItemPedido, ItemPedidoDTO>().ReverseMap();
         }
     }
 }

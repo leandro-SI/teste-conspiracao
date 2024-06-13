@@ -11,6 +11,11 @@ namespace Conspiracao.Domain.Entities
         public long PedidoId { get; set; }
         public Pedido Pedido { get; set; }
 
+        public ItemPedido()
+        {
+            
+        }
+
         public ItemPedido(int quantidade, decimal valorUnitario, decimal desconto, string descricao, long pedidoId)
         {
             ValidationDomain(quantidade, valorUnitario, desconto, descricao, pedidoId);

@@ -10,11 +10,10 @@ namespace Conspiracao.Application.Dtos.Responses
 {
     public class PedidoResponse
     {
-        public long Id { get; set; }
         public int NumeroPedido { get; set; }
         public decimal ValorTotal { get; set; }
         public string NomeFornecedor { get; set; }
         public decimal DescontoGeral { get; set; }
-        public ICollection<ItemPedidoDTO> ItemsPedido { get; set; }
+        public ICollection<ItemResponse> ItemsPedido { get; set; }
     }
 }

@@ -1,11 +1,6 @@
 ﻿using Conspiracao.Domain.Entities;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
@@ -14,10 +9,11 @@ namespace Conspiracao.Application.Dtos
     public class ItemPedidoDTO
     {
 
+        [JsonIgnore]
         public long Id { get; set; }
 
         [Required(ErrorMessage = "Quantidade mínima Requerido")]
-        [MinLength(1)]
+        [Range(1, int.MaxValue, ErrorMessage = "A quantidade deve ser no mínimo 1")]
         [DisplayName("Quantidade")]
         public int Quantidade { get; set; }
 
@@ -36,12 +32,11 @@ namespace Conspiracao.Application.Dtos
         public string DescricaoItem { get; set; }
 
         [JsonIgnore]
-        public decimal ValorLiquido { get; set; }
-
-        [JsonIgnore]
         [DisplayName("Pedido")]
         public long PedidoId { get; set; }
         [JsonIgnore]
         public Pedido Pedido { get; set; }
+
+
     }
 }

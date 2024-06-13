@@ -11,13 +11,14 @@ namespace Conspiracao.Application.Dtos
 {
     public class PedidoDTO
     {
-        public long Id { get; set; }
+        //public long Id { get; set; }
 
         [Required(ErrorMessage = "O Nome do Fornecedor é Requerido")]
         [MinLength(3)]
         [MaxLength(200, ErrorMessage = "O nome do fornecedor não pode exceder 200 caracteres.")]
         public string NomeFornecedor { get; set; }
         public decimal DescontoGeral { get; set; }
-        public ICollection<ItemPedidoDTO> ItemsPedido { get; set; }
+        public ICollection<ItemPedidoDTO> ItemsPedido { get; set; } = new List<ItemPedidoDTO>();
+
     }
 }

@@ -44,7 +44,7 @@ namespace Conspiracao.Application.Services
                 NumeroPedido = PedidoHelpers.GerarNumeroPedido(),
                 ValorTotal = valorTotalItens - pedidoDto.DescontoGeral,
                 DescontoGeral = pedidoDto.DescontoGeral,
-                ItemsPedido = pedidoDto.ItemsPedido,
+                ItemsPedido = _mapper.Map<List<ItemResponse>>(pedidoDto.ItemsPedido)
             };
 
             pedidoResponse.ItemsPedido = pedidoResponse.ItemsPedido.Select(item =>
