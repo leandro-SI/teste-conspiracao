@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Conspiracao.Application\Conspiracao.Application.csproj" />
+    <ProjectReference Include="..\Conspiracao.Domain\Conspiracao.Domain.csproj" />
+    <ProjectReference Include="..\Conspiracao.Infra.Data\Conspiracao.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>
