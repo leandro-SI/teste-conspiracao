@@ -15,7 +15,7 @@ namespace Conspiracao.Infra.Data.EntitiesConfiguration
         {
             builder.HasKey(p => p.Id);
             builder.Property(p => p.NomeFornecedor)
-                .HasMaxLength(150)
+                .HasMaxLength(200)
                 .IsRequired();
 
             builder.HasMany(p => p.ItemsPedido)

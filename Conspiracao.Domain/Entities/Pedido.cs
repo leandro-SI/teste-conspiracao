@@ -18,6 +18,9 @@ namespace Conspiracao.Domain.Entities
             DomainExceptionValidation.When(string.IsNullOrEmpty(nomeFornecedor),
                 "Nome do Fornecedor inválido. Nome é requerido.");
 
+            DomainExceptionValidation.When(nomeFornecedor.Length > 200,
+                "Nome do Fornecedor inválido. máximo de caracteres é 200.");
+
             DomainExceptionValidation.When(itemsPedido is null,
                 "Items pedido inválido, o pedido deve conter no mínimo 1 item.");
 

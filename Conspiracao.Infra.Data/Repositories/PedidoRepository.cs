@@ -21,7 +21,6 @@ namespace Conspiracao.Infra.Data.Repositories
         public Pedido IncluirPedido(Pedido pedido)
         {
 
-
             //Lógica para incluir pedido no banco de dados
             //await _context.Add(pedido);
             //_context.SaveChangesAsync();
